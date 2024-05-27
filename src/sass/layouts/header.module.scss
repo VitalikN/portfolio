@@ -1,0 +1,19 @@
+@import "../utils/container.scss";
+@import "../utils/mixins";
+
+.container__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 36px;
+  padding-bottom: 36px;
+  @include desktop {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 
-const inter = Inter({ subsets: ["latin"] });
+import { garamond } from "../utils/fonts";
 
 export const metadata: Metadata = {
   title: "Web Studio",
@@ -22,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={garamond.className}>
         <Header />
         <main>{children}</main>
       </body>
