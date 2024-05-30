@@ -3,18 +3,17 @@
 .container {
   width: 100%;
   margin: 0 auto;
-
-  @include mobile {
-    min-width: 320px;
+  @include mediaQuery(320px) {
+    // min-width: 320px;
     padding-left: 15px;
     padding-right: 15px;
   }
-  @include tablet {
-    min-width: 768px;
+  @include mediaQuery(768px) {
+    // min-width: 768px;
     padding-left: 25px;
     padding-right: 25px;
   }
-  @include desktop {
+  @include mediaQuery(1280px) {
     width: 1280px;
   }
 }

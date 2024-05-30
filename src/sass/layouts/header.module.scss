@@ -7,7 +7,7 @@
   justify-content: space-between;
   padding-top: 36px;
   padding-bottom: 36px;
-  @include desktop {
+  @include mediaQuery(1280px) {
     padding-top: 24px;
     padding-bottom: 24px;
   }
