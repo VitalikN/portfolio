@@ -48,8 +48,32 @@ p {
   padding: 0;
   margin: 0;
 }
-/* @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+/* d */
+
+@property --angle {
+  symtax: "<angle>";
+  initial-value: -90deg;
+}
+@keyframes hide {
+  to {
+    --aggle: -90deg;
+    rotate: -135deg;
+    opacity: 0;
   }
-} */
+}
+@keyframes show {
+  to {
+    --aggle: var(--to__angle)
+    rotate: 0deg;
+    opacity: 1;
+  }
+}
+:root{
+  --cyan : #6ea3afff;
+  --lightcyan: #Cea3af64;
+  --shadow-1: #999999cc;
+  --shadow-2: #666666ff;
+  --knob-color:#84848484;
+  --knob-grad1:#fdfdfd;
+  --knob-grad2:#c8c8c8c8;
+}

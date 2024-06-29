@@ -1,0 +1,198 @@
+/* components/Wheel.module.scss */
+$wheel-size: 400px;
+$segment-count: 7;
+$triangle-count: 6;
+$segment-angle: 360deg / $segment-count;
+$triangle-angle: 360deg / $triangle-count;
+
+@mixin segment-rotation($index) {
+  transform: rotate($segment-angle * $index) skewY(calc(90deg - $segment-angle));
+}
+
+@mixin triangle-rotation($index) {
+  transform: rotate($triangle-angle * $index);
+}
+
+.wheelContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f0f0f0;
+  position: relative;
+}
+
+.wheel {
+  position: relative;
+  width: $wheel-size;
+  height: $wheel-size;
+  border-radius: 50%;
+  background: #333;
+  overflow: hidden;
+  //   transform: rotate(calc($segment-angle / 10));
+  // Initial rotation to align segments properly
+
+  .segment {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: #fff;
+    border: 1px solid #000;
+    text-align: end;
+    line-height: calc($wheel-size / 2);
+    font-size: 1.2em;
+    font-weight: normal;
+    transform-origin: 100% 100%;
+
+    &.segment0 {
+      @include segment-rotation(0);
+      background: #ffffff;
+
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    &.segment1 {
+      @include segment-rotation(1);
+
+      background: #938bdf;
+    }
+    &.segment2 {
+      @include segment-rotation(2);
+      background: #199863;
+    }
+    &.segment3 {
+      @include segment-rotation(3);
+      background: #83d419;
+    }
+    &.segment4 {
+      @include segment-rotation(4);
+      background: #ae4a07;
+    }
+    &.segment5 {
+      @include segment-rotation(5);
+      background: #d80032;
+      background: url("/cat.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    &.segment6 {
+      @include segment-rotation(6);
+      background: #94b716;
+      background: url("/dog.jpeg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+
+    &.segment7 {
+      @include segment-rotation(7);
+      background: #d6ed82;
+      background: url("/cat.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    &.segment8 {
+      @include segment-rotation(8);
+
+      background: #b79f16;
+      background: url("/dog.jpeg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    &.segment9 {
+      @include segment-rotation(9);
+      background: #b78916;
+      background: url("/cat.jpg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    &.segment10 {
+      @include segment-rotation(10);
+      background: #b77116;
+      background: url("/dog.jpeg");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+    &.segment11 {
+      @include segment-rotation(11);
+      background: #5f5f5f;
+    }
+  }
+
+  .content {
+    position: absolute;
+    font-size: 30px;
+    line-height: 25px;
+    font-weight: bold;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: rgb(255, 255, 255);
+  }
+}
+
+.centerCircle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 120px;
+  margin-top: -60px;
+  margin-left: -60px;
+  background-color: #545454;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .triangleButton {
+    position: absolute;
+    width: 0;
+    height: 0;
+
+    background: none;
+    cursor: pointer;
+    &.triangle0 {
+      @include triangle-rotation(0);
+      transform: rotate(0deg);
+
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 18px solid #252424;
+      top: 15px;
+    }
+    &.triangle1 {
+      @include triangle-rotation(1);
+      transform: rotate(180deg);
+
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 18px solid #252424;
+      bottom: 15px;
+    }
+    &.triangle2 {
+      @include triangle-rotation(2);
+      transform: rotate(270deg);
+
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 18px solid #252424;
+      left: 15px;
+    }
+    &.triangle3 {
+      @include triangle-rotation(3);
+      transform: rotate(90deg);
+
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-bottom: 18px solid #252424;
+      right: 15px;
+    }
+  }
+}
